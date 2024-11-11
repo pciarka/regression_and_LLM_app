@@ -1,6 +1,6 @@
 instructor
 pydantic
-pandas
+pandas=2.1.4
 os
 pycaret.regression
 typing
