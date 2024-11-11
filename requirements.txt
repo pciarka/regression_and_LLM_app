@@ -9,6 +9,6 @@ dotenv
 os
 pycaret.regression
 typing
-streamlit as st
+streamlit
 langfuse.decorators
 langfuse.openai
