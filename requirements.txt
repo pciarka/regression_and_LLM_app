@@ -1,8 +1,7 @@
 instructor
 pydantic
 pandas==2.1.4
-pycaret.regression
+pycaret
 typing
 streamlit
-langfuse.decorators
-langfuse.openai
+langfuse
