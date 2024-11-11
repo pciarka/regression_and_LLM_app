@@ -6,7 +6,7 @@ import instructor
 from pydantic import BaseModel
 # from openai import OpenAI
 import pandas as pd
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 from pycaret.regression import  load_model, predict_model
 from typing import Optional
