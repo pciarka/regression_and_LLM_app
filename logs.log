@@ -11676,3 +11676,87 @@ Alternately, you can install this by running `pip install pycaret[models]`
 2024-11-11 12:38:31,976:INFO:Preloading libraries
 2024-11-11 12:38:31,977:INFO:Set up data.
 2024-11-11 12:38:31,981:INFO:Set up index.
+2024-11-11 17:52:14,339:INFO:Initializing load_model()
+2024-11-11 17:52:14,341:INFO:load_model(model_name=best_time_model, platform=None, authentication=None, verbose=True)
+2024-11-11 17:52:14,418:INFO:Initializing predict_model()
+2024-11-11 17:52:14,418:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001923FBC2E10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Gender', 'Time_5_km'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('onehot_encoding',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=OneHotEncoder(cols=['Age_category'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('actual_estimator',
+                 GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001923F6DFBA0>)
+2024-11-11 17:52:14,419:INFO:Checking exceptions
+2024-11-11 17:52:14,419:INFO:Preloading libraries
+2024-11-11 17:52:14,420:INFO:Set up data.
+2024-11-11 17:52:14,428:INFO:Set up index.
+2024-11-11 17:52:34,411:INFO:Initializing load_model()
+2024-11-11 17:52:34,415:INFO:load_model(model_name=best_time_model, platform=None, authentication=None, verbose=True)
+2024-11-11 17:52:34,476:INFO:Initializing predict_model()
+2024-11-11 17:52:34,476:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x00000192330127D0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Gender', 'Time_5_km'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('onehot_encoding',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=OneHotEncoder(cols=['Age_category'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('actual_estimator',
+                 GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001923F6DFE20>)
+2024-11-11 17:52:34,476:INFO:Checking exceptions
+2024-11-11 17:52:34,477:INFO:Preloading libraries
+2024-11-11 17:52:34,477:INFO:Set up data.
+2024-11-11 17:52:34,482:INFO:Set up index.
+2024-11-11 17:55:14,368:INFO:Initializing load_model()
+2024-11-11 17:55:14,368:INFO:load_model(model_name=best_time_model, platform=None, authentication=None, verbose=True)
+2024-11-11 17:55:14,421:INFO:Initializing predict_model()
+2024-11-11 17:55:14,421:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001923FA39FD0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Gender', 'Time_5_km'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('onehot_encoding',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=OneHotEncoder(cols=['Age_category'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('actual_estimator',
+                 GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001923FC0FBA0>)
+2024-11-11 17:55:14,421:INFO:Checking exceptions
+2024-11-11 17:55:14,422:INFO:Preloading libraries
+2024-11-11 17:55:14,423:INFO:Set up data.
+2024-11-11 17:55:14,427:INFO:Set up index.
+2024-11-11 17:55:40,133:INFO:Initializing load_model()
+2024-11-11 17:55:40,134:INFO:load_model(model_name=best_time_model, platform=None, authentication=None, verbose=True)
+2024-11-11 17:55:40,195:INFO:Initializing predict_model()
+2024-11-11 17:55:40,195:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x0000019238882290>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Gender', 'Time_5_km'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('onehot_encoding',
+                 TransformerWrapper(include=['Age_category'],
+                                    transformer=OneHotEncoder(cols=['Age_category'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('actual_estimator',
+                 GradientBoostingRegressor(random_state=123))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001923FC0FE20>)
+2024-11-11 17:55:40,195:INFO:Checking exceptions
+2024-11-11 17:55:40,196:INFO:Preloading libraries
+2024-11-11 17:55:40,196:INFO:Set up data.
+2024-11-11 17:55:40,201:INFO:Set up index.

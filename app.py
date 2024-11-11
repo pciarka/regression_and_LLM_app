@@ -16,7 +16,7 @@ from langfuse.openai import OpenAI
 
 # załadowanie .env i wczytanie klucza
 # load_dotenv()
-# key = os.getenv("OPENAI_API_KEY")
+key = os.getenv("OPEN_API_KEY")
 
 # schemat odpowiedzi AI
 class Desc_of_men(BaseModel):
