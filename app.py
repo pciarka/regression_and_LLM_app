@@ -123,7 +123,7 @@ df= st.session_state.df
 if "user_input" not in st.session_state:
     st.session_state.user_input = ''
 user_input = st.session_state.user_input
-st.write(st.session_state)  #tymczasowy wydruk session_state
+# st.write(st.session_state)  #tymczasowy wydruk session_state
        
 # Właściwy kod apki to poniższe dwa if'y            
 
@@ -132,13 +132,13 @@ if st.button("Zatwierdź", key=f"input_3"):
         df = ask_AI(user_input)
         df = pd.DataFrame([df.dict()])
         while not check_AI_response(df):
-            st.write(df) #tymczasowy wydruk tabeli z danymi
+            # st.write(df) #tymczasowy wydruk tabeli z danymi
             check_AI_response_info(df) # info dla usera o czym opowiedzieć
             break
       
 if check_AI_response(df): 
     a=predict(df)
-    st.write(a) #tymczasowy wydruk odpowiedzi AI
+    # st.write(a) #tymczasowy wydruk odpowiedzi AI
     total_seconds = a.loc[0, 'Predicted_time_of_halfmarathon']
     hours, minutes, seconds = convert_seconds(total_seconds)
     your_time=(f"Przewidywany czas ukończenia półmaratonu to: {hours}h {minutes}min {seconds}sek \n Powodzenia w biegu!")
