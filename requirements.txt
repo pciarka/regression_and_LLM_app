@@ -8,7 +8,7 @@ pandas
 dotenv
 os
 pycaret.regression
-typing import
+typing
 streamlit as st
 langfuse.decorators
 langfuse.openai
