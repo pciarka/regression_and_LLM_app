@@ -1,7 +1,7 @@
-from pathlib import Path
-from datetime import date
-from getpass import getpass
-from IPython.display import Image
+# from pathlib import Path
+# from datetime import date
+# from getpass import getpass
+# from IPython.display import Image
 import instructor
 from pydantic import BaseModel
 # from openai import OpenAI
@@ -11,7 +11,6 @@ import os
 from pycaret.regression import  load_model, predict_model
 from typing import Optional
 import streamlit as st
-
 from langfuse.decorators import observe
 from langfuse.openai import OpenAI
 
