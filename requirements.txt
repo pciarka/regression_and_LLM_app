@@ -5,4 +5,4 @@ pycaret
 typing
 streamlit
 langfuse
-dotenv
+python-dotenv
