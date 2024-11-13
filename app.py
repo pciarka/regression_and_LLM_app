@@ -13,6 +13,7 @@ from typing import Optional
 import streamlit as st
 from langfuse.decorators import observe
 from langfuse.openai import OpenAI
+from dotenv import dotenv_values
 
 # załadowanie .env i wczytanie klucza
 # load_dotenv()
@@ -63,7 +64,7 @@ def ask_AI (input):
     )
     return resp_AI
 
-#Sprawdzenie, czy któraś z kolumn ma brakującą wartość (NaN)
+#not full -> false, full->false
 def check_AI_response(df):
     if pd.isna(df.loc[0, 'Age_category']) or pd.isna(df.loc[0, 'Gender']) or pd.isna(df.loc[0, 'Time_5_km']):
         return False
@@ -107,8 +108,27 @@ def convert_seconds(total_seconds):
     seconds = int(total_seconds % 60)           # Pełne sekundy
     return hours, minutes, seconds
 
+def get_openai_client():
+    return OpenAI(api_key=st.session_state["openai_api_key"])
+
+env = dotenv_values(".env")
+
 st.title("Cześć, sprawdzę dla Ciebie jaki czas osiągniesz w półmaratonie.")
 st.subheader("""Opowiedz mi trochę o sobie: jesteś kobietą czy mężczyzną, ile masz lat oraz jaki masz aktualny czas na 5 km""")
+
+# OpenAI API key protection
+if not st.session_state.get("openai_api_key"):
+    if "OPENAI_API_KEY" in env:
+        st.session_state["openai_api_key"] = env["OPENAI_API_KEY"]
+
+    else:
+        st.info("Dodaj swój klucz API OpenAI aby móc korzystać z tej aplikacji")
+        st.session_state["openai_api_key"] = st.text_input("Klucz API", type="password")
+        if st.session_state["openai_api_key"]:
+            st.rerun()
+
+if not st.session_state.get("openai_api_key"):
+    st.stop()
 
 # Dane początkowe pusty df załadowany do session state
 if 'df' not in st.session_state:
