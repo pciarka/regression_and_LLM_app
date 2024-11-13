@@ -32,8 +32,7 @@ class Desc_of_men(BaseModel):
 # funkcja  - pytanie do AI
 @observe()
 def ask_AI (input):
-    instructor_openai_client = instructor.from_openai(OpenAI(api_key=key))
-
+    instructor_openai_client = instructor.from_openai(OpenAI(api_key=get_openai_client()))
     resp_AI = instructor_openai_client.chat.completions.create(
         model="gpt-4o-mini",
         response_model=Desc_of_men,
@@ -144,8 +143,10 @@ if "user_input" not in st.session_state:
     st.session_state.user_input = ''
 user_input = st.session_state.user_input
 # st.write(st.session_state)  #tymczasowy wydruk session_state
-       
-# Właściwy kod apki to poniższe dwa if'y            
+
+#       
+# MAIN
+#            
 
 user_input = st.text_input("Napisz o sobie:", st.session_state.user_input, key=f"input_2")
 if st.button("Zatwierdź", key=f"input_3"):
