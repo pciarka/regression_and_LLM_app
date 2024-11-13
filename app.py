@@ -17,8 +17,8 @@ from dotenv import dotenv_values
 
 # załadowanie .env i wczytanie klucza
 # load_dotenv()
-key = os.getenv("OPEN_API_KEY")
-
+# key = os.getenv("OPEN_API_KEY")
+key=st.session_state.get("openai_api_key")
 # schemat odpowiedzi AI
 class Desc_of_men(BaseModel):
     Age_category: Optional[int] = None
@@ -32,7 +32,7 @@ class Desc_of_men(BaseModel):
 # funkcja  - pytanie do AI
 @observe()
 def ask_AI (input):
-    instructor_openai_client = instructor.from_openai(OpenAI(api_key=get_openai_client()))
+    instructor_openai_client = instructor.from_openai(OpenAI(api_key=key))
     resp_AI = instructor_openai_client.chat.completions.create(
         model="gpt-4o-mini",
         response_model=Desc_of_men,
