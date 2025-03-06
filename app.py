@@ -118,7 +118,7 @@ st.subheader("""Opowiedz mi trochę o sobie: jesteś kobietą czy mężczyzną, 
 # OpenAI API key protection
 if not st.session_state.get("openai_api_key"):
     if "OPENAI_API_KEY" in env:
-        st.session_state["openai_api_key"] = env["OPENAI_API_KEY"]
+        st.session_state["openai_api_key"] = ["OPENAI_API_KEY"]
 
     else:
         st.info("Dodaj swój klucz API OpenAI aby móc korzystać z tej aplikacji")
