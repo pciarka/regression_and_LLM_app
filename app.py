@@ -112,7 +112,7 @@ def get_openai_client():
 
 env = dotenv_values(".env")
 
-st.title("Cześć, sprawdzę dla Ciebie jaki czas osiągniesz w półmaratonie.")
+st.title("Cześć sprawdzę dla Ciebie jaki czas osiągniesz w półmaratonie.")
 st.subheader("""Opowiedz mi trochę o sobie: jesteś kobietą czy mężczyzną, ile masz lat oraz jaki masz aktualny czas na 5 km""")
 
 # OpenAI API key protection
