@@ -18,7 +18,7 @@ from dotenv import dotenv_values
 # załadowanie .env i wczytanie klucza
 # load_dotenv()
 # key = os.getenv("OPEN_API_KEY")
-key=st.session_state.get("openai_api_key")
+key=st.session_state.get("OPENAI_API_KEY")
 # schemat odpowiedzi AI
 class Desc_of_men(BaseModel):
     Age_category: Optional[int] = None
@@ -108,7 +108,7 @@ def convert_seconds(total_seconds):
     return hours, minutes, seconds
 
 def get_openai_client():
-    return OpenAI(api_key=st.session_state["openai_api_key"])
+    return OpenAI(api_key=st.session_state["OPENAI_API_KEY"])
 
 env = dotenv_values(".env")
 
@@ -116,9 +116,9 @@ st.title("Cześć, sprawdzę dla Ciebie jaki czas osiągniesz w półmaratonie."
 st.subheader("""Opowiedz mi trochę o sobie: jesteś kobietą czy mężczyzną, ile masz lat oraz jaki masz aktualny czas na 5 km""")
 
 # OpenAI API key protection
-if not st.session_state.get("openai_api_key"):
+if not st.session_state.get("OPENAI_API_KEY"):
     if "OPENAI_API_KEY" in env:
-        st.session_state["openai_api_key"] = ["OPENAI_API_KEY"]
+        st.session_state["OPENAI_API_KEY"] = ["OPENAI_API_KEY"]
 
     else:
         st.info("Dodaj swój klucz API OpenAI aby móc korzystać z tej aplikacji")
