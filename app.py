@@ -18,7 +18,8 @@ from dotenv import dotenv_values
 # załadowanie .env i wczytanie klucza
 # load_dotenv()
 # key = os.getenv("OPEN_API_KEY")
-key=st.session_state.get("OPENAI_API_KEY")
+key=st.secrets["OPENAI_API_KEY"]
+st.session_state["OPENAI_API_KEY"] = key
 # schemat odpowiedzi AI
 class Desc_of_men(BaseModel):
     Age_category: Optional[int] = None
@@ -112,7 +113,7 @@ def get_openai_client():
 
 env = dotenv_values(".env")
 
-st.title("Cześć sprawdzę dla Ciebie jaki czas osiągniesz w półmaratonie.")
+st.title("Cześć, sprawdzę dla Ciebie jaki czas osiągniesz w półmaratonie.")
 st.subheader("""Opowiedz mi trochę o sobie: jesteś kobietą czy mężczyzną, ile masz lat oraz jaki masz aktualny czas na 5 km""")
 
 # OpenAI API key protection
@@ -122,11 +123,11 @@ if not st.session_state.get("OPENAI_API_KEY"):
 
     else:
         st.info("Dodaj swój klucz API OpenAI aby móc korzystać z tej aplikacji")
-        st.session_state["openai_api_key"] = st.text_input("Klucz API", type="password")
-        if st.session_state["openai_api_key"]:
+        st.session_state["OPENAI_API_KEY"] = st.text_input("Klucz API", type="password")
+        if st.session_state["OPENAI_API_KEY"]:
             st.rerun()
 
-if not st.session_state.get("openai_api_key"):
+if not st.session_state.get("OPENAI_API_KEY"):
     st.stop()
 
 # Dane początkowe pusty df załadowany do session state
